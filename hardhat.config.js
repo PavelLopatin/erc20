@@ -26,7 +26,7 @@ module.exports = {
       },
       ganache_bsc: {
          url: process.env.RPC_BSC,
-         accounts: [process.env.TRON_KEY]
+         accounts: [process.env.KEY]
       },
    },
    settings: {          // See the solidity docs for advice about optimization and evmVersion
