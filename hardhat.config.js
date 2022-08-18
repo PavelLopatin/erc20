@@ -18,17 +18,14 @@ module.exports = {
       ]
    },
   //If you want to use other test network then feel free to use just replace ropsten with your test network name
-   defaultNetwork: "testnet",
+   defaultNetwork: "ganache_ultron",
    networks: {
-      hardhat: {
-         accounts: [{privateKey: process.env.KEY, balance: "10000000000000000000000"}]
-      },
-      testnet: {
+      ganache_ultron: {
          url: process.env.RPC,
          accounts: [process.env.KEY]
       },
-      tron: {
-         url: process.env.TRON_RPC,
+      ganache_bsc: {
+         url: process.env.RPC_BSC,
          accounts: [process.env.TRON_KEY]
       },
    },
