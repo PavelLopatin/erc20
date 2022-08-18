@@ -17,8 +17,8 @@ async function createOrGetContract() {
   let token = await ethers.getContractFactory("NewToken");
   token = await token.deploy();
   await token.deployed();
-  console.log('local_bsc_usdc: ' + token.address);
-  deployed_storage["local_bsc_usdc"] = token.address;
+  console.log('ultron_usdc: ' + token.address);
+  deployed_storage[token.network] = token.address;
   fs.writeFileSync(filename, JSON.stringify(deployed_storage));
 }
 
