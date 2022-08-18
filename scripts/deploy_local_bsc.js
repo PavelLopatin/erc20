@@ -18,7 +18,7 @@ async function createOrGetContract() {
   token = await token.deploy();
   await token.deployed();
   console.log('bsc_usdc: ' + token.address);
-  deployed_storage[token.network] = token.address;
+  deployed_storage["bsc_usdc"] = token.address;
   fs.writeFileSync(filename, JSON.stringify(deployed_storage));
 }
 
