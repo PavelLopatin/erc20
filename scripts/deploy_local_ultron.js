@@ -1,7 +1,7 @@
 const {ethers, run } = require("hardhat");
 const fs = require('fs');
 
-const filename = __dirname + "/deployed_storage.json";
+const filename = process.env.DIRNAME  + "/deployed_storage.json";
 
 let deployed = false;
 let deployed_storage = {};
