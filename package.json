@@ -15,10 +15,13 @@
     "ethereum-waffle": "^3.2.0",
     "ethers": "^5.0.0",
     "hardhat": "^2.8.4",
-    "solidity-coverage": "^0.7.20"
+    "solidity-coverage": "^0.7.20",
+    "tronbox": "2.7.25"
   },
   "dependencies": {
+    "@ericxstone/hardhat-blockscout-verify": "^1.0.0",
     "@nomiclabs/hardhat-etherscan": "^3.0.3",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "tronweb": "^4.3.0"
   }
 }

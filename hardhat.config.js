@@ -5,6 +5,8 @@ require("@nomiclabs/hardhat-etherscan");
 require("@nomiclabs/hardhat-waffle");
 require("solidity-coverage");
 require('dotenv').config();
+require("@ericxstone/hardhat-blockscout-verify");
+const {SOLIDITY_VERSION, EVM_VERSION} = require("@ericxstone/hardhat-blockscout-verify");
 
 module.exports = {
    solidity: {
@@ -17,14 +19,12 @@ module.exports = {
             }
       ]
    },
+    plugins: ["truffle-source-verify"],
   //If you want to use other test network then feel free to use just replace ropsten with your test network name
-   defaultNetwork: "ganache_ultron",
+   defaultNetwork: "bcs",
+
    networks: {
-      ganache_ultron: {
-         url: process.env.RPC,
-         accounts: [process.env.KEY]
-      },
-      ganache_bsc: {
+      bcs: {
          url: process.env.RPC_BSC,
          accounts: [process.env.KEY]
       },
@@ -40,6 +40,6 @@ module.exports = {
       disambiguatePaths: false,
       runOnCompile: true,
       strict: true,
-   }
+   },
 }
 
