@@ -3,7 +3,7 @@ module.exports = {
     development: {
       privateKey: process.env.TRON_KEY,
       feeLimit: 100000000,
-      fullHost: process.env.RPC_TRON,
+      fullHost: "http://tron:9090",
       network_id: "*"
     },
     compilers: {

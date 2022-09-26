@@ -5,8 +5,6 @@ require("@nomiclabs/hardhat-etherscan");
 require("@nomiclabs/hardhat-waffle");
 require("solidity-coverage");
 require('dotenv').config();
-require("@ericxstone/hardhat-blockscout-verify");
-const {SOLIDITY_VERSION, EVM_VERSION} = require("@ericxstone/hardhat-blockscout-verify");
 
 module.exports = {
    solidity: {
@@ -25,7 +23,7 @@ module.exports = {
 
    networks: {
       bcs: {
-         url: process.env.RPC_BSC,
+         url: "http://ganache_bsc:8545",
          accounts: [process.env.KEY]
       },
    },
