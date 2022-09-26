@@ -23,7 +23,7 @@ module.exports = {
 
    networks: {
       bcs: {
-         url: "http://ganache_bsc:8545",
+         url: "http://ganache_bsc:1010",
          accounts: [process.env.KEY]
       },
    },
@@ -37,7 +37,7 @@ module.exports = {
       alphaSort: true,
       disambiguatePaths: false,
       runOnCompile: true,
-      strict: true,
-   },
+      strict: true
+   }
 }
 
