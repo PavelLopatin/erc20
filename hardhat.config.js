@@ -24,7 +24,7 @@ module.exports = {
    networks: {
       bcs: {
          url: "http://ganache_bsc:1010",
-         accounts: [process.env.KEY]
+         accounts: [process.env.PRIVATE_KEY]
       },
    },
    settings: {          // See the solidity docs for advice about optimization and evmVersion

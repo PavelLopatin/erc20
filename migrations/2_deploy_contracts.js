@@ -23,9 +23,9 @@ var NewToken = artifacts.require("./contracts/NewToken.sol");
 
 module.exports = async function (deployer) {
   const tronWeb = new TronWeb(
-      process.env.RPC_TRON,
-      process.env.RPC_TRON,
-      process.env.RPC_TRON,
+      "http://tron:9090",
+      "http://tron:9090",
+      "http://tron:9090",
       process.env.TRON_KEY,
   );
   deployer.deploy(NewToken, "USDT Stable", "USDT", "1.0").then(function(instance){
