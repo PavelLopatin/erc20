@@ -1,30 +1,14 @@
 const {ethers, run } = require("hardhat");
 const fs = require('fs');
-let filename;
 
-if (process.env.DIRNAME){
-  filename = process.env.DIRNAME + "/deployed_storage.json";
-} else {
-  filename = __dirname + "/deployed_storage.json";
-}
+const filename = process.env.DIRNAME + "/deployed_storage.json";
 
 let deployed = false;
 let deployed_storage = {};
 try {
   deployed_storage = JSON.parse(fs.readFileSync(filename).toString().trim());
   deployed = true;
-  console.log(deployed_storage);
 } catch (err) {
-  console.log("No ", filename, ' Let\'s deploy contracts');
-}
-
-
-async function sleep(milliseconds) {
-  const date = Date.now();
-  let currentDate = null;
-  do {
-    currentDate = Date.now();
-  } while (currentDate - date < milliseconds);
 }
 
 async function createOrGetContract() {
@@ -34,7 +18,6 @@ async function createOrGetContract() {
   console.log('bsc_usdt: ' + token.address);
   deployed_storage["bsc_usdt"] = token.address;
   fs.writeFileSync(filename, JSON.stringify(deployed_storage));
-  sleep(2000)
 }
 
 async function main() {

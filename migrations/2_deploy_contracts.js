@@ -1,22 +1,15 @@
-const fs = require('fs');
-let filename;
 const TronWeb = require('tronweb');
 
-if (process.env.DIRNAME){
-  filename = process.env.DIRNAME + "/deployed_storage.json";
-} else {
-  filename = __dirname + "/deployed_storage.json";
-}
+const fs = require('fs');
 
+const filename = process.env.DIRNAME + "/deployed_storage.json";
 
 let deployed = false;
 let deployed_storage = {};
 try {
   deployed_storage = JSON.parse(fs.readFileSync(filename).toString().trim());
   deployed = true;
-  console.log(deployed_storage);
 } catch (err) {
-  console.log("No ", filename, ' Let\'s deploy contracts');
 }
 
 var NewToken = artifacts.require("./contracts/NewToken.sol");
